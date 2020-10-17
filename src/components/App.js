@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from './LeftCard';
 import MovieCard from './RightCard';
 import {data} from '../data';
-import {addMovies} from '../actions';
+
 
 function App(props) {
 //   componentDidMount (){

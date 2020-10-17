@@ -1,31 +1,24 @@
-// import {ADD_MOVIES, ADD_FAVOURITE} from '../actions';
+import {ADD_MOVIES, ADD_FAVOURITE} from '../actions';
 
-// const initialMoviesState={
-//     list:[],
-//     favourites:[]
-// }
+const initialDataState={
+    
+}
 
-// export default function movies (state=initialMoviesState,action){
-//     // if(action.type==ADD_MOVIES){
-//     //     return {
-//     //         ...state,
-//     //         list:action.movies
-//     //     }
-//     // }
-//     // return state;
-//     switch(action.type){
-//         case ADD_MOVIES:
-//             return{
-//                 ...state,
-//                 list:action.movies
-//             }
-//         case ADD_FAVOURITE:
-//             return{
-//                 ...state,
-//                 favourites:[action.movie, ...state.favourites]
+export default function data (state=initialDataState,action){
+    
+    switch(action.type){
+        case ADD_DATA:
+            return{
+                ...state,
+                list:action.movies
+            }
+        case REMOVE_DATA:
+            return{
+                ...state,
+                checkList:[action.movie, ...state.checklist]
                 
-//             }
-//         default :
-//          return state;        
-//     }
-// }
+            }
+        default :
+         return state;        
+    }
+}
