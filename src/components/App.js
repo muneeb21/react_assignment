@@ -1,27 +1,33 @@
 import React from 'react';
-import Navbar from './Navbar';
-import MovieCard from './MovieCard';
+import Navbar from './LeftCard';
+import MovieCard from './RightCard';
 import {data} from '../data';
 import {addMovies} from '../actions';
 
-class App extends React.Component {
-  componentDidMount (){
-    const {store}=this.props;
-    store.subscribe(()=>{
-      console.log('UPDATED');
-      this.forceUpdate();
-    });
-    // make api call
-    // dispatch items
-    store.dispatch(addMovies(data));
-    console.log('STATE',this.props.store.getState());
-  }
-  render() {    
-    const {list}=this.props.store.getState();
+function App(props) {
+//   componentDidMount (){
+//     const {store}=this.props;
+//     store.subscribe(()=>{
+//       console.log('UPDATED');
+//       this.forceUpdate();
+//     });
+//     // make api call
+//     // dispatch items
+//     store.dispatch(addMovies(data));
+//     console.log('STATE',this.props.store.getState());
+//   }
+//   render() {    
+//     const {list}=this.props.store.getState();
   return (
     <div className="App">
-      <Navbar />
-      <div className="main">
+      <div className="leftCard">
+      <LeftCard detailsLeft={props.left} />
+      </div>
+      <div className="RightCard">
+      <RightCard detailsRight={props.right} />
+      </div>
+
+      {/* <div className="main">
         <div className="tabs">
           <div className="tab">Movies</div>
           <div className="tab">Favorites</div>
@@ -32,10 +38,10 @@ class App extends React.Component {
             <MovieCard movie={movie} key={'movie-${index}'}/>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
   }
-}
+
 
 export default App;

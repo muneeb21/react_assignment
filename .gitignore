@@ -4,6 +4,10 @@
 /node_modules
 /.pnp
 .pnp.js
+Appmain.js
+LeftCard.js
+RightCard.js
+maindata.js
 
 # testing
 /coverage

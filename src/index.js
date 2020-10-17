@@ -7,10 +7,7 @@ import App from './components/App';
 
 const store=createStore(movies);
 
-store.dispatch({
-  type:'ADD_MOVIES',
-  movies: [{name:'Superman'}]
-});
+
 
 ReactDOM.render(
   
